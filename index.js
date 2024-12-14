@@ -12,10 +12,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({
-    credentials: true,
-    origin: process.env.CLIENT_URL
-}))
+app.use(cors())
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", 'http://test-crmleads.ru:3000');
     res.header("Access-Control-Allow-Credentials", true);
