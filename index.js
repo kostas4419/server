@@ -12,14 +12,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", 'http://test-crmleads.ru:3000');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
+app.use(cors({origin: false}))
 app.use('/api', router)
 app.use(errorMiddleware)
 
