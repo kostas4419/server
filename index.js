@@ -6,7 +6,7 @@ const { default: mongoose } = require('mongoose')
 const router = require('./router/index')
 const errorMiddleware = require('./middlewares/error-middleware')
 
-const PORT = process.env.PORT || 5123
+const PORT = process.env.PORT || 5000
 
 const app = express()
 
